@@ -12,19 +12,26 @@
 	<div class="goodsWrap">
 		<!-- 左边 -->
 		<div class="wrapLeft">
-			<div class="goodsBigImg">
-				<img src="images/temp/temp7.jpg" />
+			<div class="goodsBigImg" id="goodsBigImg">
+				<div id="bigImgMask"></div>
+				<img id="bigImgId"  alt="图片加载中" />
 				<i></i>
+				<!-- 大图局部 -->
+				<div class="bigImgWrap" id="bigImgWrapId">
+					<img />
+				</div>
 			</div>
 			<div class="smallImgList">
-				<label class="sty1"></label>
-				<ul>
-					<li>图1</li>
-					<li>图2</li>
-					<li>图3</li>
-					<li>图4</li>
-				</ul>
-				<span class="sty2"></span>
+				<label id="leftBtnId" class="sty1"></label>
+				<div class="ulWrap">
+					<ul id="smallImgId">
+	<!--					<li>图1</li>
+						<li>图2</li>
+						<li>图3</li>
+						<li>图4</li>-->
+					</ul>					
+				</div>
+				<span id="rightBtnId" class="sty2"></span>
 			</div>
 		</div>
 
@@ -67,12 +74,12 @@
 
 			<!-- 加入购物车按钮 -->
 			<div class="toShopingCar">
-				<div>
-					<input tyep='text' value=1 />
-					<input type='button' value="+" />
-					<input type='button' value="-" />
+				<div class="inputWrap">
+					<input class="input_A" tyep='text' value=1 />
+					<input class="input_B" type='button' value="+" />
+					<input class="input_C" type='button' value="-" />
 				</div>
-				<input type='button' value="加入购物车" />
+				<input class="toShopingCarBtn" type='button' value="加入购物车" />
 			</div>
 
 		</div>
@@ -84,5 +91,10 @@
 <br/>
 <br/>
 <br/>
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/config.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/goodsDetail.js"></script>
+
 	</body>
 </html>

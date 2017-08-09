@@ -1,0 +1,205 @@
+/******************************
+ * date:2017/07/13
+ * name:电商项目，产品详情页;
+ * author:He2ID
+ */
+
+/* goodsBigImg */
+.goodsBigImg{
+	width:495px;height: 495px;border:1px solid #666;
+	position: relative;
+	// overflow: hidden;
+}
+.goodsBigImg i{
+	width:30px;height: 30px;position: absolute;bottom: 0;right: 0;
+	background: url('../images/icon/icon_6.png') no-repeat;display: block;
+}
+.goodsBigImg img{width:495px;height: 495px;}
+#bigImgMask{
+	width: 200px;
+	height:200px;
+	background:#EDD288;
+	opacity: 0.7;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	border: 1px solid #ff0;
+}
+.bigImgWrap{
+	height:495px;
+	width: 495px;
+	overflow: hidden;
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 495px;
+	border: 1px solid #ff0;
+	display: none;
+	// background: #000;
+}
+.bigImgWrap img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:1225px; 
+	height:1225px;
+}
+/* smallImgList */
+.smallImgList{
+	width: 495px;height: 100px;position: relative;
+}
+.smallImgList label, .smallImgList span{
+	width:30px;height: 34px;position: absolute;
+	display: block;top: 20px;
+	background-image: url('../images/icon/icon_7.jpg');
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+.smallImgList label.sty1{
+	left: 0;background-position: center top;
+}
+.smallImgList span.sty2{
+	right: 0;background-position: center bottom;
+}
+.ulWrap{
+	width: 300px;
+	height: 70px;
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
+	border:1px solid #ccc;
+}
+.smallImgList ul{
+	height: 70px;
+	overflow: hidden;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.smallImgList ul li{
+	width:60px;height: 60px;float: left;margin-right: 10px;
+	cursor: pointer;border:1px solid #fff;
+}
+.smallImgList ul li:hover{
+	border:1px solid #f00;
+}
+
+/* goodsInfo */
+.goodsInfo{
+	width:100%;clear: both;
+	overflow: hidden;margin-bottom: 20px;
+}
+.goodsInfo h1{
+	color: #666666;font-size: 18px;
+}
+.goodsInfo p{
+	color: #f00;font-size: 14px;
+}
+
+/* 配送商品地址 */
+.sendGoodsAddress{
+	width:100%;clear: both;
+}
+.sendGoodsAddress label{
+	float: left;color: #666;margin-right: 5px;
+	height: 24px;line-height: 24px;
+}
+/*  */
+.addressTitle{
+	float: left;height: 24px;
+	line-height: 24px;padding:0 30px 0 5px;
+	position: relative;cursor: pointer;
+	border:1px solid #8F8F8F;
+	border-bottom: 0;background: #fff;
+}
+.addressTitle p{
+	float: left;margin-right: 3px;font-size: 14px;
+	color: #666;
+}
+.addressTitle i{
+	width:16px;height: 10px;display: block;
+	position: absolute;top: 6px;right: 10px;
+	background: url('../images/icon/icon_8.jpg') no-repeat;
+}
+
+/* 配送城市列表 */
+.addressList{
+	width:376px;height: 194px;border:1px solid #666;
+	float: left;clear: both;margin-left: 53px;
+	margin-top: -1px;padding:0 10px;
+}
+.addressList p{
+	color: #666;font-size: 14px;font-weight: bold;
+	margin:25px 0 16px 0;
+}
+.addressList ul{
+	width:374px;height: 24px;display: block;
+	border-bottom: 2px solid #EDD28B;
+}
+.addressList ul li{
+	height: 24px;float: left;padding:0 11px;
+	line-height: 24px;margin-right: 9px;
+	font-size: 14px;font-weight: bold;color: #005AA0;
+	border:1px solid #ddd;background: #fff;
+	cursor: pointer;
+}
+.addressList ul li.yellow{
+	border: 2px solid #EDD28B;
+	border-bottom: 0;
+}
+
+/* 省市区，列表 */
+.nameItemList{
+	width:374px;margin:10px auto;
+}
+.nameItemList p{
+	width:92px;height: 24px;line-height: 24px;
+	float: left;overflow: hidden;
+	font-size: 14px;color: #666;text-align: left;
+	font-weight: normal;margin:0;
+}
+
+/* toShopingCar */
+.toShopingCar{
+	width:240px;height: 60px;float: left;
+	margin: 20px 0 0 70px;
+	float: left;clear: both;
+}
+.inputWrap{
+	width:54px;height: 48px;float: left;
+	border:1px solid #ccc;
+	position: relative;
+}
+
+/* 加减号 */
+.inputWrap .input_A, 
+.inputWrap .input_B, 
+.inputWrap .input_C{
+	text-align: center;
+}
+.inputWrap .input_A{
+	width:37px;height: 48px;float: left;
+	border:0;
+}
+.inputWrap .input_B{
+	width:16px;height: 24px;
+	position: absolute;top: 0;right: 0;
+	border:0;cursor: pointer;
+	border-bottom:1px solid #ccc;
+}
+.inputWrap .input_C{
+	width:16px;height: 24px;
+	position: absolute;bottom: 0;right: 0;
+	border:0;cursor: pointer;
+}
+
+/* toShopingCarBtn */
+.toShopingCarBtn{
+	width:157px;height: 50px;float: left;margin-left: 11px;
+	background: #DF3033;color: #fff;
+	font-size: 22px;font-weight: bold;
+	text-align: center;line-height: 50px;
+	cursor: pointer;
+}
