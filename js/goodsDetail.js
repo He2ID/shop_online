@@ -3,6 +3,11 @@
  * name:产品详情
  * author:He2ID
  */
+ /******************************
+ * date:2017/08/07
+ * name:大图切换，局部高清展示
+ * author:He2ID
+ */
  function GoodDetailImg(_config){
  	for(var i in _config){
  		this[i]=_config[i];
@@ -12,7 +17,7 @@
  	this.sum=0;
  	this.init();
  }
- GoodDetailImg.prototype={
+ GoodDetailImg.prototype = {
  	init:function(){
 		var _this = this; 
 		_this.getJson();
@@ -30,7 +35,7 @@
 		});
  	},
  	createDom:function(_imgs){
- 		console.log(_imgs);
+ 		//console.log(_imgs);
 		var _this = this;
 		var _len = _imgs.length;
 		for(var i=0;i<_len;i++){
@@ -106,7 +111,7 @@
  	eventMouseMove:function(){
  		var _this=this;
  		_this.goodsBigImg.on('mousemove',function(e){
- 			console.log(e);
+ 			//console.log(e);
  			var _eL=e.pageX;
  			var _eT=e.pageY;
 
@@ -162,18 +167,91 @@
  }
 
  var detailImgConfig = {
- 	smallImgId:$('#smallImgId'),
- 	bigImgId:$('#bigImgId'),
- 	leftBtnId:$('#leftBtnId'),
- 	rightBtnId:$('#rightBtnId'),
- 	goodsBigImg:$('#goodsBigImg'),
- 	bigImgMask:$('#bigImgMask'),
- 	bigImgWrapId:$('#bigImgWrapId')
-
+	 	smallImgId:$('#smallImgId'),
+	 	bigImgId:$('#bigImgId'),
+	 	leftBtnId:$('#leftBtnId'),
+	 	rightBtnId:$('#rightBtnId'),
+	 	goodsBigImg:$('#goodsBigImg'),
+	 	bigImgMask:$('#bigImgMask'),
+	 	bigImgWrapId:$('#bigImgWrapId')
  }
  new GoodDetailImg(detailImgConfig);
 
  //获取链接地址
-var _href = ( window.location.href );
-var _n = _href.indexOf('?');
-var _str = _href.substring(_n+1);
+// var _href = ( window.location.href );
+// var _n = _href.indexOf('?');
+// var _str = _href.substring(_n+1);
+/******************************
+ * date:2017/08/10
+ * name:产品详情
+ * author:He2ID
+ */
+ function GetGoodsDetailInfo(n){
+ 	for(var i in n){
+ 		this[i] = n[i];
+ 	}
+ 	this.init();
+ }
+GetGoodsDetailInfo.prototype={
+	init:function(){
+		var _this = this;
+		_this.getData();
+	},
+	getData:function(){
+		var _this = this;
+		var _pid = getPid( 'pidVal' );
+		console.log(_pid);
+		getParam( APILIST.param, _pid, function(d){
+			console.log(d);
+			_this.createDom( d.productInfo );
+		});
+	},
+	resolveJson:function( _data ){
+		//解析Json数据 
+		var _this=this;
+		var _temArr = [];
+		for(var i=0;i<_data.length;i++){
+			for(var j in _data[i]){
+				_temArr.push(_data[i][j]);
+			}
+		}
+		//console.log(_temArr);
+		return _temArr;
+	},
+	createDom:function( _data ){
+		var _this = this;
+		var _dataArr = _this.resolveJson(_data);
+
+		// $('<h1/>',{})
+		// 	.html(_data[0].title)
+		// 	.appendTo(_this.goodsInfoId);
+		// $('<p/>',{})
+		// 	.html(_data[i].info)
+		// 	.appendTo(_this.goodsInfoId);
+		for(var i=0;i<_dataArr.length;i++){
+			if(i==0){
+				$('<h1/>',{})
+				.html(_dataArr[i])
+				.appendTo(_this.goodsInfoId);	
+			}else{
+				$('<p/>',{})
+				.html(_dataArr[i])
+				.appendTo(_this.goodsInfoId);
+			}
+		}
+		//方法二
+		// for(var i=0;i<_dataArr.length;i++){
+		// 	$('<p/>',{})
+		// 	.html(_dataArr[i])
+		// 	.appendTo(_this.goodsInfoId);
+		// }
+		// _this.goodsInfoId.find('p').eq(0).css({
+		// 	'font-size':33,
+		// 	'color':'#f00'
+		// });
+	}
+}
+var _getGoodsDetailConfig={
+ 	goodsInfoId:$('#goodsInfoId')
+}
+new GetGoodsDetailInfo(_getGoodsDetailConfig);
