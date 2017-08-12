@@ -129,6 +129,7 @@
 	width:376px;height: 194px;border:1px solid #666;
 	float: left;clear: both;margin-left: 53px;
 	margin-top: -1px;padding:0 10px;
+	display: none;
 }
 .addressList p{
 	color: #666;font-size: 14px;font-weight: bold;
@@ -160,7 +161,9 @@
 	font-size: 14px;color: #666;text-align: left;
 	font-weight: normal;margin:0;
 }
-
+.nameItemList p:hover{
+	background: #ff0;
+}
 /* toShopingCar */
 .toShopingCar{
 	width:240px;height: 60px;float: left;
